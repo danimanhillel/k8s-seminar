@@ -6,6 +6,7 @@ metadata:
 spec:
   selector:
     app: animals    # Run on any pod with label - app:myapp
+  type: LoadBalancer  
   ports:          # Map incoming port to target port
   - name: http    # Setting multiple ports listterns 
     protocol: TCP
@@ -15,9 +16,8 @@ spec:
 ---
 apiVersion: apps/v1
 kind: Deployment
-type: LoadBalancer
 metadata:
-  name: animal-deployment
+  name: animal-bear
 spec:
   selector: 
     matchLabels:
@@ -31,7 +31,7 @@ spec:
         app: animals
     spec:
       containers:
-      - name: beer
+      - name: bear
         image: supergiantkir/animals:bear
         ports:
         - containerPort: 80
@@ -39,9 +39,8 @@ spec:
 ---
 apiVersion: apps/v1
 kind: Deployment
-type: LoadBalancer
 metadata:
-  name: animal-deployment
+  name: animal-moose
 spec:
   selector: 
     matchLabels:
