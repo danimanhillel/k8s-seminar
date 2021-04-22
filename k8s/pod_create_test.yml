@@ -5,14 +5,14 @@ metadata:
 spec:
  containers: 
  - name: bear 
-   image: upergiantkir/animals:bear
+   image: supergiantkir/animals:bear
    ports: 
    - containerPort: 80
- - name: springapp
-   image: yanivomc/spring-music:latest
    volumeMounts:
     - name: app-storage
       mountPath: /storage
+ - name: springapp
+   image: yanivomc/spring-music:latest
    ports: 
    - containerPort: 8080
    volumeMounts:
