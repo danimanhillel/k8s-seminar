@@ -9,7 +9,7 @@ spec:
    ports: 
    - containerPort: 80
  - name: springapp
-   image: anivomc/spring-music:latest
+   image: yanivomc/spring-music:latest
    volumeMounts:
     - name: app-storage
       mountPath: /storage
